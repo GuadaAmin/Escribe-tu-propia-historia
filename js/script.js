@@ -10,6 +10,10 @@ while (continuar != "ESC") {
     historia = historia + input;
     switch (input) {
         case "una":
+            if (historia == "Había una vez una") {
+                historia = historia + " hormiga.";
+                break;
+            }
             historia = historia + " vez ";
             break;
         case "un":
@@ -25,7 +29,7 @@ while (continuar != "ESC") {
             historia = historia + " perros ";
             break;
     }
-    if (input == "que" || input == "muy") {
+    if (input == "que" || input == "muy" || historia == "Había una vez una hormiga.") {
         alert(historia);
         break;
     }
