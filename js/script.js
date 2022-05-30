@@ -13,9 +13,10 @@ while (continuar != "ESC") {
             if (historia == "Había una vez una") {
                 historia = historia + " hormiga.";
                 break;
-            }
+            } else {
             historia = historia + " vez ";
             break;
+            }
         case "un":
             historia = historia + " gato ";
             break;
