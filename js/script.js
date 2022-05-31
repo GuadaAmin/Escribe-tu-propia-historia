@@ -7,7 +7,9 @@ continuar = prompt("Escriba ESC si no desea continuar o enter para escribir una 
 while (continuar != "ESC") {
     alert(historia);
     input = prompt("Ingrese la siguiente palabra:");
-    historia = historia + input;
+    if (input == "una"|| input == "un" || input == "que"|| input == "muy") {
+        historia = historia + input;
+    }
     switch (input) {
         case "una":
             if (historia == "Había una vez una") {
@@ -27,7 +29,7 @@ while (continuar != "ESC") {
             historia = historia + " lindo.";
             break;
         default:
-            historia = historia + " perros ";
+            alert("Elige otra palabra, no tenemos tantas opciones aún :(")
             break;
     }
     if (input == "que" || input == "muy" || historia == "Había una vez una hormiga.") {
