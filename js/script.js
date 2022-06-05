@@ -1,6 +1,16 @@
 let historia = "Había " ;
 let input = 0;
 let continuar = 0;
+let nombre = prompt("¿Cuál es tu nombre?")
+
+alert("¡Hola, " + nombre + "!")
+
+function siguiente(palabra) {
+    historia = historia + palabra
+}
+function saludo(nombre) {
+    alert("¡Nos vemos, " + nombre + "!")
+}
 
 alert("Escribamos una historia :]");
 continuar = prompt("Escriba ESC si no desea continuar o enter para escribir una historia:");
@@ -8,25 +18,25 @@ while (continuar != "ESC") {
     alert(historia);
     input = prompt("Ingrese la siguiente palabra:");
     if (input == "una"|| input == "un" || input == "que"|| input == "muy") {
-        historia = historia + input;
+        siguiente(input)
     }
     switch (input) {
         case "una":
             if (historia == "Había una vez una") {
-                historia = historia + " hormiga.";
+                siguiente(" hormiga.")
                 break;
             } else {
-            historia = historia + " vez ";
+            siguiente(" vez ")
             break;
             }
         case "un":
-            historia = historia + " gato ";
+            siguiente(" gato ")
             break;
         case "que":
-            historia = historia + " dormía.";
+            siguiente(" dormía.")
             break;
         case "muy":
-            historia = historia + " lindo.";
+            siguiente(" lindo.")
             break;
         default:
             alert("Elige otra palabra, no tenemos tantas opciones aún :(")
@@ -42,11 +52,13 @@ while (continuar != "ESC") {
     }
 }
 if (continuar == "ESC") {
-    alert("No hay problema, ¡nos vemos la próxima!")
-} else if (input == "") {
+    alert("No hay problema :]")
+    saludo(nombre)
+} else if (input == "" || nombre == "") {
     alert("¡Recargá la página e intentá de nuevo!")
 } else {
     alert("¡Gracias por escribir una historia conmigo!")
+    saludo(nombre)
 }
 
 
